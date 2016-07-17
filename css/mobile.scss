@@ -1,0 +1,503 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin background-size($size){
+  -o-background-size: $size;  
+  -webkit-background-size: $size; 
+  -moz-background-size:$size; 
+  background-size: $size; 
+}
+
+@mixin header-arrow_after{
+  position: absolute;
+  top: 25px;
+  content: '';
+}
+
+@media screen and (max-width: 1024px) {
+  .main-banner {
+    padding-top: 65%;
+  }
+  .header_container_search {
+    top: 0;
+    display: block;
+    width: 60px;
+    height: 56px;
+    &:hover {
+      background: #f2f2f2;
+    }
+    .header_search-img {
+      top: 10px;
+      left: 15px;
+      border: none;
+    }
+    form {
+      display: none;
+    }
+  }
+  .header_basket {
+    margin: 0;
+  }
+  .mobile-search_container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    background: #f2f2f2;
+    position: relative;
+    z-index: 4;
+    display: none;
+    form {
+      font-size: 0;
+      width: 60%;
+      margin: 0 auto;
+      
+    }
+    input{
+      display: block;
+      display: inline-block;
+      width: 85%;
+      height: 30px;
+      vertical-align: top;
+      border: none;
+      margin: 0 auto;
+    }
+    button {
+      display: block;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+    
+      vertical-align: top;
+      border: none;
+      cursor: pointer;
+      background: #0060ac;
+      background-image: url(../images/magnifier-mb.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+     @include background-size(15px);
+    }
+  }
+
+  .mob_search-show{
+    display: block;
+  }
+
+
+  .subscribe-title {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .subscribe .subscribe-content {
+    input, .input {
+      width: 31.3%;
+    }
+    button {
+      width: 31.3%;
+      display: block;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+  }
+  .subscribe-btn {
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+  }
+  .subscribe .subscribe-content button:hover {
+    background: #f42156;
+  }
+
+  .footer-container{
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_container{
+    position: static;
+  }
+  .banner-title_wrap {
+    width: 350px;
+  }
+  .header-mobile_menu {
+    display: inline-block;
+    float: right;
+    width: 60px;
+    height: 56px;
+    background-image: url(../images/sprite.png);
+    background-position: -3px 0px;
+    @include background-size(145px);
+    cursor: pointer;
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+  .responsive-navigation {
+    position: absolute;
+    top: 56px;
+    display: none;
+    width: 50%;
+    background: #f2f2f2;
+    z-index: 6;
+    right: 0;
+    height: 100%;
+  }
+
+  .mob_menu-show{
+    display: block;
+    //animation: mobMenu .5s;
+  }
+
+    @keyframes mobMenu {   /* назовём анимацию: "go-left-right" */
+    from {
+      right: -90%;
+      opacity: 0;
+    }
+    to {
+      right: -10%;
+      opacity: 1;
+    }
+  }
+
+  /* Префикс для Chrome, Opera, Safari */
+  @-webkit-keyframes mobMenu {
+    from {
+      right: -90%;
+      opacity: 0;
+    }
+    to {
+      right: -10%;
+      opacity: 1;
+    }
+  }
+
+  .header-menu{
+    background-color: #e5e5e5;
+    border-left: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    left: 0;
+    display: none;
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+    z-index: 6;
+  }
+
+  .menu-item-arrow:after{
+    background-position: -48px 2px;
+  }
+
+  .navigation{
+    position: static;
+  }
+
+  .navigation-item_arrow:after {
+    left: 87%;
+  }
+
+  .header-submenu{
+    left: 0;
+    position: relative;
+    z-index: 6;
+    width: 100%;
+    background-color: #D9D9D9;
+  }
+
+  
+
+
+  .navigation-item {
+    display: block;
+    font-size: 14px;
+  }
+
+  .header-mob-entrance{
+    display: none;
+  }
+  .header_menu-show{
+    display: block;
+  }
+  .main-banner_info {
+    top: 20%;
+    width: 320px;
+  }
+  .main-banner_button {
+    margin: 50px auto 20px;
+  }
+  .main-banner_title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .main-banner_text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .main-banner_link {
+    text-align: center;
+  }
+  .subscribe {
+    padding: 100px 0;
+    .subscribe-content {
+      input, .input {
+        display: block;
+        width: 90%;
+        margin: 0 auto 10px;
+      }
+      button {
+        width: 50%;
+      }
+    }
+  }
+  .spec-offers_items {
+    width: 100%;
+    display: block;
+  }
+  .sp-item {
+    width: 100%;
+    padding-top: 51.25%;
+  }
+
+  .spec-offers_bg{
+     .spec-offers-text{
+      top: 20%;
+    }
+    .spec-offers-title{
+      top: 30%;
+    }
+  }
+
+  .footer-container{
+    width: 95%;
+  }
+
+  .footer-column {
+    display: block;
+    border-bottom: 1px solid #e3e3e3;    
+    width: 100%;
+    cursor: pointer;
+  }
+  .footer-column_box {
+    &:first-child {
+      display: block;
+      border-bottom: 1px solid #e3e3e3;      
+      width: 100%;
+      cursor: pointer;
+    }
+    &:last-child {
+      display: block;
+      width: 100%;
+    }
+  }
+  .ftr-column-padding {
+    padding-left: 10px;
+    display: none;
+    -ms-overflow-y: hidden;
+        overflow-y: hidden;
+    -webkit-transition: all 600ms easeOutCirc;
+    transition:         all 600ms easeOutCirc;
+  }
+
+  .footer-column_link{
+    display: block;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .footer-column_title {
+    height: 38px;
+    line-height: 38px;
+    position: relative;
+
+    span{
+      position: absolute;
+      left: 97%;
+    }
+  }
+
+  .footer-icon{
+    opacity: 1;
+  }
+
+  .footer-icon-rotate{
+    -moz-transform: rotate(45deg); /* Для Firefox */
+    -ms-transform: rotate(45deg); /* Для IE */
+    -webkit-transform: rotate(45deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(45deg); /* Для Opera */
+    transform: rotate(45deg);
+  }
+
+
+  .footer-column p {
+    font-size: 14px;
+    font-family: 'myriad_set_promedium';
+  }
+  .footer-column_box {
+    margin-bottom: 0;
+  }
+
+  .footer-more{
+    margin: 20px 0;
+  }
+
+  .footer-copyright{
+    border-top: none;
+    margin-top: 50px;
+  }
+
+  .footer-country{
+    top: 30px;
+    position: absolute;
+    float: left;
+    left: 0;
+    width: 100px;
+    a{
+      right: 10px;
+    }
+  }
+
+  .footer-copyright .footer-copy_item, 
+  .footer-copyright .copy-item{
+    margin-top: 5px;
+  }
+
+  .footer-info{
+    position: relative;
+  }
+
+  .footer-container{
+    padding-left: 0;
+  }
+
+  .footer_menu-show{
+    display: block;
+     -webkit-transition: all 600ms easeOutCirc;
+    transition:         all 600ms easeOutCirc;
+    // animation: footer 1s ease-in 1 forwards;
+  }
+
+    @keyframes footer {   /* назовём анимацию: "go-left-right" */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Префикс для Chrome, Opera, Safari */
+  @-webkit-keyframes footer {
+     from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .main-banner {
+    padding-top: 100%;
+  }
+  .main-banner_bg {
+    background-position: 380px center;
+  }
+  .main-banner_info {
+    width: 100%;
+    left: 0;
+    div {
+      margin: 0 auto;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+  }
+
+  .banner-title_wrap{
+    width: 90%;
+    
+  }
+  .main-banner_button {
+    width: 90%;
+    height: 70px;
+    margin-right: 30px;
+  }
+  .subscribe .subscribe-content p {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .responsive-navigation{
+    width: 100%;
+  }
+
+  .header_entrance{
+    display: none;
+  }
+
+  .header-mob-entrance{
+    display: block;
+    padding: 25px 20px;
+    font-size: 16px;
+  }
+
+.header-mobile_menu{
+  background-position: -10px 0px;
+}
+
+  .header-mobile_menu,
+  .header_container_search{
+    width: 40px;
+  }
+
+  .header_container_search 
+  .header_search-img{
+    left: 5px;
+  }
+
+  .header_basket{
+    padding: 18px 10px;
+  }
+
+  .main-banner_bg {
+    min-height: 400px;
+    background-image: none;
+  }
+
+  .main-banner_button{
+    width: 100%;
+  }
+
+  .mobile-search_container {
+    width: 120%;
+    margin: 0 0 0 -10%;
+    input{
+      width: 80%;
+    }
+  }
+  .main-banner_info {
+    position: static;
+    width: 90%;
+    margin: 15% auto 0;
+    text-align: center;
+  }
+
+  .banner-title_wrap {
+    width: 100%;
+  }
+  .subscribe .subscribe-content button {
+    width: 90%;
+  }
+
+}
+
